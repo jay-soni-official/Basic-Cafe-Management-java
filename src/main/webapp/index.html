@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Management - CafePro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="logo">Cafe<span>Pro</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="login.html" class="btn-outline">Login</a>
+        <a href="signup.html" class="btn-outline">Signup</a>
+    </nav>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Manage Your Café Smartly</h1>
+        <p>Orders • Customers • Analytics • Growth</p>
+        <a href="signup.html" class="btn-primary">Get Started</a>
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="section" id="about">
+    <h2>About Our Café System</h2>
+    <p>
+        Our Café Management System helps café owners manage orders,
+        customers, staff, and business insights efficiently using
+        modern web technology. Optimize your workflow and grow your business!
+    </p>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="section light" id="contact">
+    <h2>Contact Us</h2>
+    <form action="contact" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+</section>
+
+<!-- Optional: Success/Error feedback -->
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('contact') === 'success'){
+        alert("Message sent successfully!");
+    } else if(params.get('contact') === 'failed'){
+        alert("Failed to send message.");
+    } else if(params.get('signup') === 'success'){
+        alert("Signup successful! Welcome.");
+    } else if(params.get('signup') === 'exists'){
+        alert("Email already exists. Try login.");
+    } else if(params.get('signup') === 'failed'){
+        alert("Signup failed. Try again.");
+    } else if(params.get('login') === 'failed'){
+        alert("Invalid credentials. Try again.");
+    }
+</script>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2025 CafePro. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

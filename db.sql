@@ -1,0 +1,36 @@
+
+
+create database cafe_db;
+use cafe_db;
+
+CREATE TABLE contacts (
+    contact_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+
+    phone VARCHAR(15),
+    role VARCHAR(20) DEFAULT 'CUSTOMER',  -- ADMIN / CUSTOMER
+    status VARCHAR(20) DEFAULT 'ACTIVE',  -- ACTIVE / BLOCKED
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE products (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    category VARCHAR(50),
+    price DOUBLE NOT NULL
+);
+
